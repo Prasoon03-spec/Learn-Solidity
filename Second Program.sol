@@ -30,4 +30,9 @@ contract EventTicket
     {
         return totalAmount;
     }
+
+    function getnumberOfTickets() public view returns(uint256)
+    {
+        return numberOfTickets;
+    }
 }
