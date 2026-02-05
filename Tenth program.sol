@@ -11,24 +11,25 @@ contract learnStruct
     }
 
     Movie movie;
+    Movie newMovie;
 
-    function setMovie() public 
+    function setDefaultMovie() public
     {
-        movie = Movie('Llx', 'Jane', 2026001);
+        movie = Movie('LLXM', 'Mike', 2026001);
     }
 
-    function getMovieID() public view returns (uint256)
+    function setNewMovie(string memory _Title, string memory _Director, uint256 _Movie_id) public 
     {
-        return movie.Movie_id;
+        newMovie = Movie(_Title, _Director, _Movie_id);
     }
 
-    function getMovieDirector() public view returns (string memory)
+    function getDefaultMovieDetails() public view returns (string memory, string memory, uint256)
     {
-        return movie.Director;
+        return (movie.Title, movie.Director, movie.Movie_id);
     }
 
-    function getMovieTitle() public view returns (string memory)
+    function getNewMovieDetails() public view returns (string memory, string memory, uint256)
     {
-        return movie.Title;
+        return (newMovie.Title, newMovie.Director, newMovie.Movie_id);
     }
 }
